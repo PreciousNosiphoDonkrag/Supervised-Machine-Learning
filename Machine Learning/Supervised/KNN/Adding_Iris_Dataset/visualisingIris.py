@@ -1,16 +1,11 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 from sklearn.datasets import load_iris
 
 # Load the Iris dataset
 iris = load_iris()
 X, y = iris.data, iris.target
 
-# Display the Iris dataset in tabular form
-iris_df = pd.DataFrame(data=X, columns=iris.feature_names)
-iris_df['target'] = y
-print("Iris Dataset (First 5 rows):")
-print(iris_df.head())
+
 
 # Plot the data
 plt.figure(figsize=(8, 6))
