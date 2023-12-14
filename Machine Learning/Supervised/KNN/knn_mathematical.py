@@ -41,7 +41,7 @@ class KNN:
         return result
     
 
-clf = KNN()
+clf = KNN() #create an object to initiate the class
 clf.fit(points)
 print(clf.predict(new_point))
 
