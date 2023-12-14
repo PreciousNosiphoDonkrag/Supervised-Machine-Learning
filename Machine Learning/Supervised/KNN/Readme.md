@@ -1,2 +1,0 @@
-###KNN Implementation
-something
