@@ -26,8 +26,9 @@ Another approach is to break ties randomly. For example, if you have a tie betwe
 The logic behind KNN was easy to grasp, however the implementation was challenging. Hence to meet the goal, this section will be broken down as following:<br>
 
   * Learning the mathematical implementation on KNN in python using @NeuralNine blue print explained in the video “K-Nearest Neighbors Classification From Scratch in Python (Mathematical)”. <br> - Link: https://www.youtube.com/watch?v=xtaom__-drE&t=1116s <br><br>
-*	Build on his implementation by adding training data in order to implement cross validation, this will allow performance monitoring of the algorithm and introduce Scikit-Learn. <br><br>
+*	Introduce a new dataset, thus allowing for data visualisation. <br><br>
+*	Build on his implementation by adding training data in order to implement performance monitoring of the algorithm and introduce Scikit-Learn. <br><br>
 *	Explore Scikit-learn KNN implementation <br><br>
-*	Introduce a new dataset, thus allowing for the usage of the panda library (exciting :) ). <br><br>
+
 ## this section will be further updated as the project progresses
 
