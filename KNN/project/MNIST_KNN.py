@@ -63,7 +63,7 @@ def get_accuracy_point(k=5):
 
     # #fit the object with the traning data
     knn_object.fit(X_train_flat, y_train)
-    
+    print(knn_object.evaluate_accuracy(X_test, y_test))
     #get the accuracy value for the independent images in the images of numbers folder
     counter = 0 #for accuracy
     for n in range(10):

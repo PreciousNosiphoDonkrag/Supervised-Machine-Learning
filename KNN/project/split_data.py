@@ -23,11 +23,12 @@ Y_data = MNIST_data[:,0] #all the rows of the 1st col
 
 split = int(0.8*X_data.shape[0])
 
-#Allocate
-X_train = X_data[:split, :] #every row up to the value split 
-Y_train = Y_data[:split] #every row up to split
-X_test = X_data[split:,:]#every row from split
-Y_test = Y_data[split:]
+# Allocate training and testing data
+X_train = X_data[:split, :]  # Select every row up to the value of 'split' for training data
+Y_train = Y_data[:split]     # Select corresponding labels for training data
+X_test = X_data[split:, :]   # Select rows from 'split' onwards for testing data
+Y_test = Y_data[split:]      # Select corresponding labels for testing data
+
 
 
 
