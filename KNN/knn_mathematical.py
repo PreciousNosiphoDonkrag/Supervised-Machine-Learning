@@ -5,8 +5,8 @@ from collections import Counter
 import matplotlib.pyplot as plt
 import numpy as np
 
-#list of data points that will be called classes, these usually come
-#from a text file
+#dictionary of arrays where the elements are coordinates 
+# points that belong to predetermined classes
 
 points = {"green": [[2,4], [1,3], [2,3], [3,2], [2,1], [3,4], [3,3], [1,2]],
             "red": [[5,6], [4,5], [4,6], [6,6], [5,4]]}
@@ -25,17 +25,41 @@ class KNN:
         self.k = k #self works like 'this. for c#'
         self.point = None
         
+        #define a method that takes in the number of
+        #points in the dataset 
     def fit(self,points):
         self.points = points
 
     def predict(self, new_point):
+        #store the distances and categories in a distance array below
         distances = []
+        
+        #loop through the dictionary and calculate
+        #the distance between the new point and each point
+        #in the dictionary.
         for category in self.points:
             for point in self.points[category]:
                 distance = distanceCaluclator(point, new_point)
                 distances.append([distance, category])
         
-        categories = [category[1] for category in sorted(distances)[:self.k]]
+        #now sort the distances in ascending order
+        sorted_distances = sorted(distances)
+        
+        #select the first 'n' values corresponding to the k-value
+        nearest_neighbors = sorted_distances[:self.k]
+        
+        #grab all the categories of these nearest_neighbors
+        categories = []
+        for x in nearest_neighbors:
+            categories.append(x[1])
+        
+        #the couter class will return an object of the following nature:
+        #Counter({'green': 3, 'red': 2})
+        #most_common(n): returns the 'n' most common elements 
+        #and their counts sorted in decending order. 
+        #.most_common(1)[0] would return {'green':3}
+        #to access the green we append an additional [0] to most_common(1)[0][0]
+          
         result = Counter(categories).most_common(1)[0][0]
     
         return result
@@ -63,6 +87,8 @@ new_class = clf.predict(new_point)
 color = "#FF0000" if new_class == "red" else "#02C04A"
 ax.scatter(new_point[0], new_point[1], color =color, marker = "*", s=200, zorder=100)
 
+#now just add dotted lines to represent the distance
+#from each point in the dataset to the new point
 for point in points['green']:
     ax.plot([new_point[0], point[0]], [new_point[1], point[1]], color="#02C04A", linestyle="--", linewidth="1")
 

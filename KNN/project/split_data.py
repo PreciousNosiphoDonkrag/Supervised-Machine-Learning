@@ -1,8 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import os
 
-df = pd.read_csv('./MNIST_data/train.csv')
+#get the location of the csv
+current_dir = os.path.dirname(os.path.realpath(__file__))
+file_path = os.path.join(current_dir, "train.csv")
+df = pd.read_csv(file_path)
+print(file_path)
 
 #view first 10 rows of data in tabular form with the help of panda
 #this will produce 10 rows with 785 columns, first column is labels of numbers

@@ -4,9 +4,12 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
-
+import os
 from image_preperation import prepare_input_image
-from visualize_MNIST_data import MNIST_data
+from split_data import MNIST_data
+#get the location of the csv
+current_dir = os.path.dirname(os.path.realpath(__file__))
+
 
 #load the data
 #notice we do not split the data because it is already seperated 
@@ -64,7 +67,9 @@ def get_accuracy_point(k=5):
     #get the accuracy value for the independent images in the images of numbers folder
     counter = 0 #for accuracy
     for n in range(10):
-        image_path = f"./images_of_numbers/{n}.JPG"
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        images_dir = os.path.join(current_dir, "images_of_numbers")
+        image_path = os.path.join(images_dir, f"{n}.JPG")
         
         #prepare the image
         prep_img = prepare_input_image(image_path)
@@ -115,7 +120,10 @@ def predict_images():
     print("-------------------------------------------------")
     counter = 0 #for accuracy
     for n in range(10):
-        image_path = f"./images_of_numbers/{n}.JPG"
+        #C:\Users\nosip\Desktop\Supervised-Machine-Learning\KNN\project\images_of_numbers
+        images_dir = os.path.join(current_dir, "images_of_numbers")
+        image_path = os.path.join(images_dir, f"{n}.JPG")
+        #image_path = f"./images_of_numbers/{n}.JPG"
         
         #prepare the image
         prep_img = prepare_input_image(image_path)

@@ -10,7 +10,7 @@
 import numpy as np
 from PIL import Image  # this is a python library used for handling images
 from sklearn.preprocessing import MinMaxScaler
-
+import matplotlib as plt
 
 def prepare_input_image(path):
      # Fetch the image and convert it to grayscale
@@ -37,15 +37,18 @@ def prepare_input_image(path):
 
 ##LEAVE HERE FOR NOW, FOR README FILE!!
 
-# # Visualization of input images
-# def plot_images(images, titles, h=1, w=5):
-#      plt.figure(figsize=(2 * w, 2 * h))
-#      for i in range(h * w):
-#          plt.subplot(h, w, i + 1)
-#          plt.imshow(images[i], cmap='gray')
-#          plt.title(titles[i])
-#          plt.axis('off')
-#          plt.show()
+ # Visualization of input images
+def plot_images(images, titles, h=1, w=5):
+    plt.figure(figsize=(2 * w, 2 * h))
+    for i in range(h * w):
+        plt.subplot(h, w, i + 1)
+        plt.imshow(images[i], cmap='gray')
+        plt.title(titles[i])
+        plt.axis('off')
+        plt.show()
+    
+
+
 
 
 
