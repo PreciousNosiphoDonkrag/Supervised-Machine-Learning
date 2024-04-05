@@ -5,8 +5,16 @@ from sklearn.datasets import load_iris
 iris = load_iris()
 X, y = iris.data, iris.target
 
+#lets view the features of this dataset
+print(f"The features of the dataset are: {iris.feature_names}")
+#The features of the dataset are: ['sepal length (cm)', 
+# 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
 
-
+#the target data "y" looks as following:
+#[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ #0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ #1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2
+ #2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]
 # Plot the data 
 plt.figure(figsize=(8, 6)) 
 

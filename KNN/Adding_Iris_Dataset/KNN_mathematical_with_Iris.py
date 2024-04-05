@@ -7,19 +7,27 @@ from sklearn.neighbors import KNeighborsClassifier
 
 # The Aim of this project is to give a mathematical explanation of K-Nearest Neighbors
 
+#1. Data Preperation
+
 # Load the Iris dataset
 iris = load_iris()
 X, y = iris.data, iris.target
 species_names = ["setosa", "versicolor", "virginica"]
 
 # Split the data into training and testing sets
+#test_size=0.2: specifies that 20% of the data will be used for testing, and the remaining 80% will be used for training.
+#random_state=42: Setting the random state to a fixed number ensures that the random split will be the same every time you run the code
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+#2. model Instantiation and Training
 # Define a class that will implement KNN
 class KNN:
-    def __init__(self, k=3):  # Constructor with default k value
+    def __init__(self, k=5):  # Constructor with default k value
         self.k = k
-        self.model = None #store instance of knn model once its trained
+        #When an instance of the KNN class is created, 
+        # the __init__ method is called automatically. 
+        # In this method, self.model is initialized to None. 
+        self.model = None #create an attribute that will hold the instsnce of the model
 
     def fit(self, X_train, y_train):
         #create an instance of KNeighborClassifier class found in scikit-learn
@@ -29,6 +37,8 @@ class KNN:
         #model with specified number of neighbors and fits it to
         #the training data
         self.model.fit(X_train, y_train)
+
+#3. Make a prediction
 
     #predict returns an array because in scikit-learn it is designed to
     #return a prediction for multiple values
