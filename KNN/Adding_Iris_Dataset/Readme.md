@@ -10,8 +10,8 @@ the following columns exist in the dataset:<br>
   *  Petal Width <br>
   *  Species of flower <br>
 
-  The **iris_data** is a feature matrix from the iris data and ill be assigned to the variable x.<br>
-  The **iris_target** is the target array and it contains classes and labels. This is what we will try to predict from input X. It will be assigned to the variable Y. <br> 
+  The **iris_data** is a feature matrix (input data) from the iris data and it'll be assigned to the variable x.<br>
+  The **iris_target** is the target array and it contains classes the iris_data belong to. This is what we will try to predict from a random input X. The dimensions of the flower will be the input, and the algorithm will predict which class it belongs to in Y. <br> 
   
   ### Layout of data <br>
   ![layout](https://github.com/PreciousNosiphoDonkrag/Belgium_ITVersity_Campus_Studies/assets/153648767/338ac87e-82a7-43d3-aad1-99ebd6701639) <br>
@@ -20,11 +20,11 @@ the following columns exist in the dataset:<br>
   ![gggg](https://github.com/PreciousNosiphoDonkrag/Belgium_ITVersity_Campus_Studies/assets/153648767/c0145bfb-236e-4e63-9f92-bc83aad65a54)
 
 ### The Layout of the code
-The following code builds on the mathematical implementation of the previously implemented KNN algorithm. however it replaces the matrix of coordinates that was previously used with the iris dataset. This has allowed for a smooth introduction to the scikit-learn library. The layout of the code follows the basic outline of machine learning:<br>
+The following code builds on the mathematical implementation of the previously implemented KNN algorithm. however, it replaces the matrix of coordinates that was previously used with the iris dataset. This has allowed for a smooth introduction to the scikit-learn library. The layout of the code follows the basic outline of machine learning:<br>
 - Data Preperation: The iris data set is split into X and Y training and testing data.<br>
 -  model Instatiation: the KNN class is still there however inside the class the model is instantiated using the   KNeighborsClassifier found in scikit-learn, this is done inside the fit method.
--  Model Training: still inside the fit method, the model is trained using the X and Y training data, that was defined in data preperation. <br>
-- Make a prediction: The prediction is made on the X training data, the predict method returns an array of y predictions.<br>
+-  Model Training: still inside the fit method, the model is trained using the X and Y training data, that was defined in data preparation. <br>
+- Make a prediction: The prediction is made on the X training data, and the predict method returns an array of y predictions.<br>
 - Performance evaluation (this is new): To test the performance of the model, the returned Y prediction is tested against the Y test data to produce an accuracy score. the scikit-learn model produced an accuracy score of 1.<br>
 
 ### Some images if you are interested
