@@ -1,5 +1,7 @@
 # Naive Bayes Classifier
 ## what is the project about
+Aim: To utilize the IMDb dataset available on Kaggle (movie_metadata.csv) to develop an algorithm that predicts a movie's quality (good, bad, or average) based on its plot keywords, employing the Naive Bayes classifier.
+
 ## Working with new functions and modules from the Sklearn library
 - **Sklearn.naive_bayes** is a module that has several classes for implementing      naive baye classification. <br><br>
 - **MultinomialNB** class is one of these implementations, it is designed for     multinomially distributed data, which is commonly encountered in text       classification tasks. <br><br>
@@ -22,4 +24,19 @@ This class is used to convert a collection of raw text documents into a matrix o
 - **Normalization:** After vectorization, the TF-IDF vectors are often normalized to ensure that each document vector has a unit norm (length). Normalization can prevent longer documents from dominating the similarity calculations.
 
 ## The code
+### Data preparation: 
+The usual steps for data preparation were followed. However an additional column is required that will hold the quality of the movie and each value in the column will take on one of the following values based on the movie's IMDb score: <br>
+-  Good,
+- Average, or
+- Bad.
+The values that will go into this column were found using the box and whiskers diagram that was created from the IMDB scores column.
+![Screenshot 2024-04-08 185642](https://github.com/PreciousNosiphoDonkrag/Supervised-Machine-Learning/assets/153648767/de336d51-60d0-41f9-839c-3e07badb11bd)
+### Naive-Baye implementation
+I followed the usual steps to training my dataset which are:
+1. Splitting my dataset into test and training data (80/20)
+2. Vectorizing **This was new**
+3. Fitting the model onto the vectorized training data and the un-vectorized y        training data (the target data).
+4. Then make a prediction.
+5.  An accuracy of 47% was obtained
 
+## Why this project was a failure:
