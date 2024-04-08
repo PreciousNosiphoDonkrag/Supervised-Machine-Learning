@@ -81,6 +81,3 @@ Personal hand writtien digits before and after image preperation but before flat
 
 Nosipho Donkrag 
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
