@@ -53,12 +53,12 @@ def data_preperation(movies_df):
     
     for score in movies_df['imdb_score']:
         if score < Q1:
-           quality_categories.append('B')
+           quality_categories.append('Bad')
            
         elif Q1 <= score <= Q2:
-            quality_categories.append('A')
+            quality_categories.append('Average')
         else:
-            quality_categories.append('G')
+            quality_categories.append('Good')
 
     #Add the new column to the dataframe
     #movies_df.drop(columns=['quality'], inplace=True)
