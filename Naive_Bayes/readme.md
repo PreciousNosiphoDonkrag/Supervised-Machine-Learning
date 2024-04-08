@@ -8,11 +8,11 @@ Aim: To utilize the IMDb dataset available on Kaggle (movie_metadata.csv) to dev
 **What is multinomial distributed data** <br>
   multinomial distribution describes the probability of observing each possible      outcome in a fixed number (n) of independent trials, where each trial results      in one of several mutually exclusive outcomes. <br>
 
-- By using MultinomialNB, we can train a Naive Bayes classifier specifically         tailored for handling multinomially distributed features, such as word counts in   text data. This classifier calculates the probability of each class given a set    of features and predicts the class with the highest probability. <br>
+- By using MultinomialNB, we can train a Naive-Bayes classifier specifically         tailored for handling multinomially distributed features, such as word counts in   text data. This classifier calculates the probability of each class given a set    of features and predicts the class with the highest probability. <br>
 
 ## TfidfVectorizer
 This class is used to convert a collection of raw text documents into a matrix of Term Frequency- Inverse Document Frequency (TF-IDF).
-- TF-IDF: this is a number (weight) that reflects the importance of a word relative to the whole document/s. It is calculated as follows:
+- TF-IDF: this is a number (weight) that reflects the importance of a word relative to the whole documents. It is calculated as follows:
   ![Screenshot 2024-04-08 193757](https://github.com/PreciousNosiphoDonkrag/Supervised-Machine-Learning/assets/153648767/2ccb405d-91f1-44b0-bfaf-5daf956f69ba)
 - The TF-IDF model considers both the unique and rare words in its calculations. This is to accommodate for common words such as the, is and etc.
 - TfidfVectorizer converts each document into a **number vector** based on the TF-   IDF scores; <br> 
@@ -40,3 +40,15 @@ I followed the usual steps to training my dataset which are:
 5.  An accuracy of 47% was obtained
 
 ## Why this project was a failure:
+### Naive-Bayes classification requires mutually exclusive features
+The project focused solely on plot keywords to predict movie quality. However, movie quality is influenced by various factors such as director, cast, genre, and budget.
+
+### Imbalanced Classes: 
+ Imbalanced classes can bias the model towards the majority class and result in poor performance, especially for minority classes.
+
+to really explore the full implementation of this classifier (including hyper-tuning); a different project will need to be explored. back to the drawing board :( fun.
+**mutually exclusive features:** means the presence of one feature does not affect the presence of another. However, in the context of predicting movie quality, various factors such as director, cast, genre, and budget are likely to be interrelated and not mutually exclusive.
+
+## If you are curious
+![Screenshot 2024-04-08 185620](https://github.com/PreciousNosiphoDonkrag/Supervised-Machine-Learning/assets/153648767/753d2f1b-4e1e-4ea4-810f-3566c796670f)
+IMDb has quite a few bad movies. These are movies that fall below the first quartile **of their own rating**. 
