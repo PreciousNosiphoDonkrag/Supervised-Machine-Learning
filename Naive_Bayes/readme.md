@@ -1,3 +1,17 @@
+# Naive Bayes Classifier
+## what is the project about
+## Working with new functions from the Sklearn library
+from sklearn.naive_bayes import MultinomialNB <br><br>
+- **Sklearn.naive_bayes** is a module that has several classes for implementing      naive baye classification. <br><br>
+- **MultinomialNB** class is one of these implementations, it is designed for     multinomially distributed data, which is commonly encountered in text       classification tasks. <br>
+**What is multinomial distributed data** <br>
+  multinomial distribution describes the probability of observing each possible      outcome in a fixed number (n) of independent trials, where each trial results      in one of several mutually exclusive outcomes. <br>
+
+- By using MultinomialNB, we can train a Naive Bayes classifier specifically         tailored for handling multinomially distributed features, such as word counts in   text data. This classifier calculates the probability of each class given a set    of features and predicts the class with the highest probability. <br>
+
+from sklearn.feature_extraction.text import TfidfVectorizer #new work
+
+
 Vectorizing the text data is a crucial step in preparing textual data for machine learning algorithms, including Naive Bayes classifiers. Here's why we vectorize the text data:
 
 Numerical Representation: Machine learning algorithms work with numerical data. Vectorization converts textual data (plot keywords) into numerical feature vectors, making it suitable for algorithms to process.
