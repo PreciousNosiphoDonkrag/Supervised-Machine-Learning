@@ -1,4 +1,5 @@
-# Naive_baye Classifier: Spam Emails
+# Naive_baye Classifier: 
+## Spam Emails detection
 ## Parameters in ML
 A  parameter is an internal variable that can be configured to the ML model
 and who's value is estimated from the training data. there parameters are used to make predictions
@@ -39,6 +40,15 @@ generalize to an independent dataset. It involves splitting the training data
 into multiple subsets, training the model on a subset of the data, and evaluating it on the remaining subset. This process is repeated multiple times, 
 with each subset used as the validation data exactly once.
 
+### How it works (Diagram from scikit-learn.org)
+![Screenshot 2024-04-22 144938](https://github.com/PreciousNosiphoDonkrag/Supervised-Machine-Learning/assets/153648767/3e1d0411-cabf-4c9c-b2fc-709fb9cd86ee)
+- The dataset is split into training and testing data.
+- Then the training data is further split into k folds.
+- The chosen model is trained k number of times.
+- Cross-validation ensures that each fold is treated as the training and the testing data.
+- Once this is done there will be k different models and metrices
+- To get the final performance metric, you typically average the k performance metrics obtained from each iteration.
+- Once you've completed the k iterations, you can test your final model on the untouched test dataset to get an estimate of how well your model will perform on unseen data.
 - In scikit-learn the **cross_val_score()** function takes the model, input features,
   target labels, and the number of folds as input and returns the cross-validation scores.
    
