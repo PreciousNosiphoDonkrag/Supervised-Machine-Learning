@@ -90,12 +90,12 @@ def start_here():
     
     try:
         current_dir = os.path.dirname(os.path.realpath(__file__))
-        file_path = os.path.join(current_dir, "emails.csv") 
+        file_path = os.path.join(current_dir, "resources/emails.csv") 
         emails_df = pd.read_csv(file_path) 
         emails_df = data_preperation(emails_df)
         
         # Save the processed DataFrame to a CSV file
-        output_file_path = os.path.join(current_dir, "processed_emails.csv")
+        output_file_path = os.path.join(current_dir, "resources/processed_emails.csv")
         emails_df.to_csv(output_file_path, index=False)  # Set index=False to exclude row numbers
         return 
     
