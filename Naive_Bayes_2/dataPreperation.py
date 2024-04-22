@@ -93,7 +93,7 @@ def start_here():
         file_path = os.path.join(current_dir, "resources/emails.csv") 
         emails_df = pd.read_csv(file_path) 
         emails_df = data_preperation(emails_df)
-        
+        print(emails_df.columns)
         # Save the processed DataFrame to a CSV file
         output_file_path = os.path.join(current_dir, "resources/processed_emails.csv")
         emails_df.to_csv(output_file_path, index=False)  # Set index=False to exclude row numbers

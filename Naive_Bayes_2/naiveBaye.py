@@ -10,7 +10,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, accuracy_score
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
-file_path = os.path.join(current_dir, 'processed_emails.csv')
+file_path = os.path.join(current_dir, 'resources/processed_emails.csv')
 emails_df = pd.read_csv(file_path)
 #print(emails_df.columns)
 
@@ -26,7 +26,8 @@ x_train_vectorized = vectorizer.fit_transform(x_train)
 x_test_vectorized = vectorizer.transform(x_test)
 
 #train model
-naive_baye_classifier = MultinomialNB()
+Alpha = 0.4
+naive_baye_classifier = MultinomialNB(alpha=Alpha)
 naive_baye_classifier.fit(x_train_vectorized, y_train)
 
 #make predicition
