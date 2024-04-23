@@ -2,7 +2,7 @@
 ## Spam Emails detection
 ## Parameters in ML
 A  parameter is an internal variable that can be configured to the ML model
-and who's value is estimated from the training data. there parameters are used to make predictions
+and whose value is estimated from the training data. These parameters are used to make predictions
 on the new data.
 ### Model parameters: 
 - These are parameters that are learned from the training data during the training
@@ -15,7 +15,7 @@ on the new data.
   from the data.
 - They are set before training and remain constant during training.
 - Hyperparameters control aspects of the learning process and model complexity.
-- Example: the alpha parameter for naive-Baye classifier (will be discussed later)
+- Example: the alpha parameter for naive-Baye classifier (will be discussed below)
 
 ### Alpha parameter in Multinomial Naive Baye Classifer
  the alpha parameter (commonly denoted as α) is a smoothing parameter used for 
@@ -33,8 +33,9 @@ on the new data.
 - The alpha parameter is set when creating an instance of the Multinomial Naive Bayes classifier.
  ![Screenshot 2024-04-22 124320](https://github.com/PreciousNosiphoDonkrag/Supervised-Machine-Learning/assets/153648767/06caff15-d561-4be0-aff9-a0aee7560480)
 
-- The optimal value of alpha can be found through parameter tuning techniques such as grid search or cross-validation       
-## Cross validation
+- The optimal value of alpha can be found through parameter tuning techniques such as grid search or cross-validation; both of these
+- tuning techniques will be discussed under their own folder.       
+## Cross-validation
 Cross-validation is a technique used to assess how well a model will 
 generalize to an independent dataset. It involves splitting the training data 
 into multiple subsets, training the model on a subset of the data, and evaluating it on the remaining subset. This process is repeated multiple times, 
