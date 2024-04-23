@@ -1,5 +1,5 @@
 # Naive_baye Classifier: 
-## Spam Emails detection
+## Spam Emails detection  
 This project aims to classify emails as spam or non-spam (ham) using the Naive Bayes classifier. The project consists of three main components:
 
 ### Data Preparation (data_preperation.py):
