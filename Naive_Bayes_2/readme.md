@@ -1,8 +1,24 @@
 # Naive_baye Classifier: 
-## Spam Emails detection
+## Spam Emails detection  
+This project aims to classify emails as spam or non-spam (ham) using the Naive Bayes classifier. The project consists of three main components:
+
+### Data Preparation (data_preperation.py):
+- Cleans and preprocesses the email dataset.
+- Performs text normalization, tokenization, stopwords removal, stemming, 
+- lemmatization, and removing special characters and punctuation.
+- **Stemming**: The process of reducing words to their word stem, base, or root form. It removes suffixes from words to simplify them to their base meaning. For example, "running" becomes "run", and "cats" becomes "cat".
+- **Lemmatization**: The process of reducing words to their base or dictionary form (lemma). Unlike stemming, lemmatization considers the context and meaning of the word.
+- **Tokenization**: Splitting email text into individual words
+### Naive Bayes Classifiers:
+- Uses the processed dataset to train a Naive Bayes classifier.
+- Vectorizes the text data using TF-IDF
+- Utilizes cross-validation to find the best alpha value for the Naive Bayes classifier.
+- Trains the Naive Bayes classifier with the best alpha value and evaluates its accuracy.
+### Download Resources (download.py):
+Downloads necessary resources such as stopwords and WordNet data required for data preprocessing.
 ## Parameters in ML
 A  parameter is an internal variable that can be configured to the ML model
-and who's value is estimated from the training data. there parameters are used to make predictions
+and whose value is estimated from the training data. These parameters are used to make predictions
 on the new data.
 ### Model parameters: 
 - These are parameters that are learned from the training data during the training
@@ -15,7 +31,7 @@ on the new data.
   from the data.
 - They are set before training and remain constant during training.
 - Hyperparameters control aspects of the learning process and model complexity.
-- Example: the alpha parameter for naive-Baye classifier (will be discussed later)
+- Example: the alpha parameter for naive-Baye classifier (will be discussed below)
 
 ### Alpha parameter in Multinomial Naive Baye Classifer
  the alpha parameter (commonly denoted as α) is a smoothing parameter used for 
@@ -33,24 +49,11 @@ on the new data.
 - The alpha parameter is set when creating an instance of the Multinomial Naive Bayes classifier.
  ![Screenshot 2024-04-22 124320](https://github.com/PreciousNosiphoDonkrag/Supervised-Machine-Learning/assets/153648767/06caff15-d561-4be0-aff9-a0aee7560480)
 
-- The optimal value of alpha can be found through parameter tuning techniques such as grid search or cross-validation       
-## Cross validation
-Cross-validation is a technique used to assess how well a model will 
-generalize to an independent dataset. It involves splitting the training data 
-into multiple subsets, training the model on a subset of the data, and evaluating it on the remaining subset. This process is repeated multiple times, 
-with each subset used as the validation data exactly once.
+- The optimal value of alpha can be found through parameter tuning techniques such as grid search or cross-validation; both of these
+- tuning techniques will be discussed under their own folder.       
 
-### How it works (Diagram from scikit-learn.org)
-![Screenshot 2024-04-22 144938](https://github.com/PreciousNosiphoDonkrag/Supervised-Machine-Learning/assets/153648767/3e1d0411-cabf-4c9c-b2fc-709fb9cd86ee)
-- The dataset is split into training and testing data.
-- Then the training data is further split into k folds.
-- The chosen model is trained k number of times.
-- Cross-validation ensures that each fold is treated as the training and the testing data.
-- Once this is done there will be k different models and metrices
-- To get the final performance metric, you typically average the k performance metrics obtained from each iteration.
-- Once you've completed the k iterations, you can test your final model on the untouched test dataset to get an estimate of how well your model will perform on unseen data.
-- In scikit-learn the **cross_val_score()** function takes the model, input features,
-  target labels, and the number of folds as input and returns the cross-validation scores.
    
 ## What i learned
-- Introduction to ML models' parameters and parameter tuning
+- ML models' parameters and parameter tuning (alpha parameter).
+- Cross-validation to tume parameters.
+- Text normalization: tokenization, stopwords removal, stemming, and lemmatization. 
