@@ -5,7 +5,10 @@ This project aims to classify emails as spam or non-spam (ham) using the Naive B
 ### Data Preparation (data_preperation.py):
 - Cleans and preprocesses the email dataset.
 - Performs text normalization, tokenization, stopwords removal, stemming, 
-- lemmatization, and removes special characters and punctuation.
+- lemmatization, and removing special characters and punctuation.
+- **Stemming**: The process of reducing words to their word stem, base, or root form. It removes suffixes from words to simplify them to their base meaning. For example, "running" becomes "run", and "cats" becomes "cat".
+- **Lemmatization**: The process of reducing words to their base or dictionary form (lemma). Unlike stemming, lemmatization considers the context and meaning of the word.
+- **Tokenization**: Splitting email text into individual words
 ### Naive Bayes Classifiers:
 - Uses the processed dataset to train a Naive Bayes classifier.
 - Vectorizes the text data using TF-IDF
@@ -51,5 +54,6 @@ on the new data.
 
    
 ## What i learned
-- ML models' parameters and parameter tuning (alpha parameter)
-- Cross-validation to tume parameters
+- ML models' parameters and parameter tuning (alpha parameter).
+- Cross-validation to tume parameters.
+- Text normalization: tokenization, stopwords removal, stemming, and lemmatization. 
