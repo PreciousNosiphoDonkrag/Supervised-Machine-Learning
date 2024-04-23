@@ -43,3 +43,8 @@ with each subset used as the validation data exactly once.
 
 The accuracy score of the model alternated between 98.156% and 98.332%.
 This is a significant improvement from 94.644% without using cross-validation to 98.156% while using cross-validation. The best alpha value to give an accuracy of 98.156% is 0.08. 
+
+## General guideline for choosing k:
+- Small to Medium Datasets (less than 10,000 data points): You can use k values between 5 and 10.
+- Medium to Large Datasets (more than 10,000 data points): You can use larger values of k, such as 10, 15, or even 20.
+
