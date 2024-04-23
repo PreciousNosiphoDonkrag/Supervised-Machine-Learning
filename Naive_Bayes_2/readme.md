@@ -38,4 +38,5 @@ on the new data.
 
    
 ## What i learned
-- Introduction to ML models' parameters and parameter tuning
+- ML models' parameters and parameter tuning (alpha parameter)
+- Cross-validation to tume parameters
