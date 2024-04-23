@@ -21,56 +21,46 @@ x_train, x_test, y_train, y_test = train_test_split(X,Y, test_size=0.2, random_s
 
 #vectorize data (if lost, consult previous naive-baye project (movies one))
 vectorizer = TfidfVectorizer()
-x_vectorized = vectorizer.fit_transform(X)
+x_train_vectorized = vectorizer.fit_transform(x_train)
+x_test_vectorized = vectorizer.transform(x_test)
 
-#Define model
-Alpha = 0.4
+def get_avg_cv_means(alphas):
+    avg_cv_scores = []
+    for alpha in alphas:
+       naive_baye_classifier = MultinomialNB(alpha=alpha)
+       kf = KFold(n_splits=5) 
+       cv_scores = cross_val_score(naive_baye_classifier, x_train_vectorized, y_train, cv = kf)
+       avg_cv_scores.append(np.mean(cv_scores))
+    return  avg_cv_scores
+
+def plot_cv_mean_accuracy(alphas,avg_cv_scores):
+
+
+    plt.figure(figsize=(10,6))
+    plt.plot(alphas, avg_cv_scores, marker='o', color='purple')
+    plt.title("CV mean Accuracy scores vs Alpha Parameter values")
+    plt.xlabel('Alpha value')
+    plt.ylabel("CV Mean Accuracy score")
+    plt.grid()
+    plt.show()
+    return
+alphas = np.arange(0.08, 0.1, 0.001)
+plot_cv_mean_accuracy(alphas, get_avg_cv_means(alphas))
+
+#get the alpha value with the maximum cv avg score
+best_alpha_index = np.argmax(get_avg_cv_means(alphas))
+best_alpha = alphas[best_alpha_index]
+print(f"Best alpha value: {best_alpha}")
+
+#train model on best alpha value and evaluate accuracy
+Alpha = best_alpha
 naive_baye_classifier = MultinomialNB(alpha=Alpha)
+naive_baye_classifier.fit(x_train_vectorized, y_train)
 
-#perform n-fold cross validation
-no_folds = 5
-kf = KFold(n_splits=no_folds) #split data into k-consecutive folds; can change setting to shuffle
-#cv=kf : Tell scikit-learn to use the KFold object kf 
-#created as the cross-validation splitting strategy.
-cv_scores = cross_val_score(naive_baye_classifier, x_vectorized, Y, cv = kf) 
+#make predicition
+y_pred = naive_baye_classifier.predict(x_test_vectorized)
 
-print(f"Cross Validation scores \n {cv_scores}")
+print(f"Accuracy: {accuracy_score(y_test, y_pred)*100}")
 print("classification report:")
-print(f"Mean of scores: {np.mean(cv_scores)}")
+print(classification_report(y_test, y_pred))
 
-#Lets plot some accuracy scores
-accuracy_scores = []
-k_values = range(5, 11)
-for k in k_values:
-  kf2 = KFold(n_splits=k)
-  cv_scores = cross_val_score(naive_baye_classifier, x_vectorized, Y, cv = kf2)
-  mean_accuracy = np.mean(cv_scores)  
-  accuracy_scores.append(mean_accuracy)
-
-plt.figure(figsize=(10,6))
-plt.plot(k_values, accuracy_scores, marker='o')
-plt.title("Mean Accuracy scores vs K values")
-plt.xlabel('Number of folds (k)')
-plt.ylabel("Mean Accuracy")
-plt.show()
-
-#get the k-value with the highest accuraacy between 5 and 10
-best_k = k_values[np.argmax(accuracy_scores)]
-highest_accracy = np.max(accuracy_scores)
-print(f"best k-value: {best_k}\tHighest accuracy: {highest_accracy}")
-#With k-fold cross-validation, the dataset is automatically
-#split into k folds, and the model is trained and evaluated
-# k times, each time using a different fold as the test set
-# and the remaining folds as the training set.
-
-#So, there's no need to manually split the data into training
-# and testing sets
-
-
-###Here's a general guideline for choosing the value of k:
-#Small to Medium Datasets (less than 10,000 data points):
-#You can use k values between 5 and 10.
-#For example, you might use 5-fold or 10-fold cross-validation.
-#Medium to Large Datasets (more than 10,000 data points):
-#You can use larger values of k, such as 10, 15, or even 20.
-#For example, you might use 10-fold, 15-fold, or 20-fold cross-validation.
