@@ -40,7 +40,7 @@ I followed the usual steps to training my dataset which are:
 5.  An accuracy of 47% was obtained
 
 ## Why this project was a failure:
-### Naive-Bayes classification requires mutually exclusive features
+### Naive-Bayes classification requires independence of features
 The project focused solely on plot keywords to predict movie quality. However, movie quality is influenced by various factors such as director, cast, genre, and budget.
 
 ### Imbalanced Classes: 
