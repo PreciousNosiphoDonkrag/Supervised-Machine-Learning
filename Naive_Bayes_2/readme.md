@@ -50,10 +50,10 @@ on the new data.
  ![Screenshot 2024-04-22 124320](https://github.com/PreciousNosiphoDonkrag/Supervised-Machine-Learning/assets/153648767/06caff15-d561-4be0-aff9-a0aee7560480)
 
 - The optimal value of alpha can be found through parameter tuning techniques such as grid search or cross-validation; both of these
-- tuning techniques will be discussed under their own folder.       
+- tuning techniques will be discussed.       
 
    
-## What i learned
+## What I learned
 - ML models' parameters and parameter tuning (alpha parameter).
-- Cross-validation to tume parameters.
+- Cross-validation to tune parameters.
 - Text normalization: tokenization, stopwords removal, stemming, and lemmatization. 
