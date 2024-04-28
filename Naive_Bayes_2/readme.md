@@ -13,7 +13,7 @@ This project aims to classify emails as spam or non-spam (ham) using the Naive B
 - Uses the processed dataset to train a Naive Bayes classifier.
 - Vectorizes the text data using TF-IDF
 - Utilizes cross-validation to find the best alpha value for the Naive Bayes classifier.
-- Trains the Naive Bayes classifier with the best alpha value and evaluates its accuracy.
+- Trains the Naive Bayes classifier with the best alpha value and evaluates its accuracy (before parameter tuning accuracy = 87.6%).
 ### Download Resources (download.py):
 Downloads necessary resources such as stopwords and WordNet data required for data preprocessing.
 ## Parameters in ML
